@@ -1,6 +1,7 @@
 
 import { Button } from "@/components/ui/button";
 import { ChevronRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -19,7 +20,8 @@ const Hero = () => {
                 Get Started
               </Button>
               <Button size="lg" variant="outline" className="border-guiitar-primary text-guiitar-primary hover:bg-guiitar-primary/10 flex items-center">
-                Learn More <ChevronRight size={16} className="ml-2" />
+                <Link to="/about">Learn More </Link>
+                <ChevronRight size={16} className="ml-2" />
               </Button>
             </div>
           </div>

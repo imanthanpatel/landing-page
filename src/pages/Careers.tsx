@@ -39,7 +39,7 @@ const JobPosting: React.FC<JobPostingProps> = ({
   postedDate,
 }) => {
   return (
-    <div className="bg-white rounded-lg shadow-md p-6 border border-gray-100 transition-all hover:shadow-lg">
+    <div className=" bg-white rounded-lg shadow-md p-6 border border-gray-100 transition-all hover:shadow-lg">
       <div className="flex justify-between items-start mb-4">
         <div>
           <h3 className="text-xl font-serif font-bold text-guiitar-primary">{title}</h3>
@@ -266,7 +266,7 @@ const Careers = () => {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-gray-50">
+      <main className="pt-20 min-h-screen bg-gray-50">
         {/* Hero Section */}
         <section className="bg-gradient-to-r from-guiitar-primary to-guiitar-secondary text-white py-20">
           <div className="container mx-auto px-4">

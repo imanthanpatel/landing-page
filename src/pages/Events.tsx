@@ -129,7 +129,7 @@ const Events = () => {
   ];
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="pt-20 flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow">
         {/* Events Header */}

@@ -17,9 +17,8 @@ const CallToAction = () => {
             <Button size="lg" className="bg-white text-guiitar-primary hover:bg-gray-100">
               Apply Now
             </Button>
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 flex items-center">
-              Schedule a Visit <ArrowRight size={16} className="ml-2" />
-            </Button>
+          
+            
           </div>
         </div>
       </div>

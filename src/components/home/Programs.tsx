@@ -38,8 +38,10 @@ const Programs = () => {
               <CardContent className="p-6">
                 <h3 className="text-xl font-semibold mb-3">{program.title}</h3>
                 <p className="text-gray-600 mb-6">{program.description}</p>
-                <Button variant="outline" className="border-gray-300 hover:border-guiitar-primary hover:text-guiitar-primary">
+                <Button variant="outline" className="border-gray-300 hover:bg-guiitar-primary hover:text-white" >
+                   <Link to="/funding">
                   Learn More
+                   </Link>
                 </Button>
               </CardContent>
             </Card>

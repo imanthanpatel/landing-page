@@ -216,29 +216,31 @@ const TeamCarousel = () => {
               {activeCategory.members.map((member) => (
                 <CarouselItem key={member.id} className="pl-2 md:pl-4 sm:basis-full md:basis-1/2 lg:basis-1/3">
                   <Card className="h-full hover:shadow-lg transition-shadow">
-                    <div className="h-48 sm:h-60 overflow-hidden">
-                      <img 
-                        src={member.image} 
-                        alt={member.name} 
-                        className="w-full h-full object-cover"
-                      />
+                    <div className="flex justify-center pt-6 pb-4">
+                      <div className="relative group">
+                        <img 
+                          src={member.image} 
+                          alt={member.name} 
+                          className="w-24 h-24 md:w-28 md:h-28 rounded-full object-cover border-4 border-white shadow-lg filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                        />
+                      </div>
                     </div>
-                    <CardContent className="pt-6">
-                      <h4 className="font-bold text-xl mb-1">{member.name}</h4>
-                      <p className="text-gray-600 mb-4">{member.position}</p>
+                    <CardContent className="pt-2 text-center">
+                      <h4 className="font-bold text-lg mb-1">{member.name}</h4>
+                      <p className="text-gray-600 mb-3 text-sm">{member.position}</p>
                       
                       {member.bio && (
-                        <p className="text-gray-700 text-sm mb-4 line-clamp-3">{member.bio}</p>
+                        <p className="text-gray-700 text-xs mb-4 line-clamp-3">{member.bio}</p>
                       )}
                       
                       <div className="flex justify-center space-x-3">
                         <a href="#" className="text-gray-400 hover:text-guiitar-primary">
-                          <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M22.23 0H1.77C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.2 0 22.23 0zM7.27 20.1H3.65V9.24h3.62V20.1zM5.47 7.76c-1.15 0-2.07-.9-2.07-2.01 0-1.11.92-2.01 2.07-2.01 1.14 0 2.06.9 2.06 2.01 0 1.11-.92 2.01-2.06 2.01zm14.62 12.34h-3.6v-5.61c0-1.33-.02-3.05-1.87-3.05-1.88 0-2.16 1.45-2.16 2.95v5.71h-3.6V9.24h3.45v1.58h.05c.48-.91 1.65-1.87 3.4-1.87 3.63 0 4.3 2.38 4.3 5.45v5.7z"></path>
                           </svg>
                         </a>
                         <a href="#" className="text-gray-400 hover:text-guiitar-primary">
-                          <svg className="h-5 w-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                          <svg className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                             <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
                           </svg>
                         </a>
@@ -246,8 +248,8 @@ const TeamCarousel = () => {
                     </CardContent>
                     {member.resume && (
                       <CardFooter className="justify-center pt-2 pb-4">
-                        <Button variant="outline" className="w-full">
-                          <FileText className="mr-2 h-4 w-4" />
+                        <Button variant="outline" className="w-full text-xs">
+                          <FileText className="mr-2 h-3 w-3" />
                           View Resume
                         </Button>
                       </CardFooter>

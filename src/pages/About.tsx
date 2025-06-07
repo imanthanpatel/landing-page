@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
@@ -6,7 +5,7 @@ import TeamCarousel from "@/components/about/TeamCarousel";
 
 const About = () => {
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="pt-20 flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow">
         {/* About Header */}
@@ -64,8 +63,67 @@ const About = () => {
           </div>
         </section>
 
+        {/* Leadership Messages */}
+        <section id="leadership-messages" className="section-padding bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-center">Messages from Leadership</h2>
+              
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
+                {/* President */}
+                <div className="text-center">
+                  <div className="mb-4">
+                    <img 
+                      src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&q=80&w=400&h=400" 
+                      alt="Dr. Rajesh Patel - President" 
+                      className="w-32 h-32 md:w-40 md:h-40 rounded-lg mx-auto object-cover shadow-md"
+                    />
+                  </div>
+                  <h3 className="text-lg md:text-xl font-bold mb-2 text-guiitar-primary">Dr. Rajesh Patel</h3>
+                  <p className="text-sm text-gray-600 mb-3">President, GUIITAR COUNCIL</p>
+                  <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+                    "Innovation is not just about creating new technologies; it's about solving real-world problems and making a meaningful impact on society. At GUIITAR COUNCIL, we nurture dreams and build bridges between academia and industry."
+                  </p>
+                </div>
+
+                {/* Provost */}
+                <div className="text-center">
+                  <div className="mb-4">
+                    <img 
+                      src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=400&h=400" 
+                      alt="Dr. Priya Sharma - Provost" 
+                      className="w-32 h-32 md:w-40 md:h-40 rounded-lg mx-auto object-cover shadow-md"
+                    />
+                  </div>
+                  <h3 className="text-lg md:text-xl font-bold mb-2 text-guiitar-primary">Dr. Priya Sharma</h3>
+                  <p className="text-sm text-gray-600 mb-3">Provost, GUIITAR COUNCIL</p>
+                  <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+                    "Education and innovation go hand in hand. Our role is to create an environment where knowledge transforms into action. We believe in experiential learning where students learn by doing, failing, and succeeding."
+                  </p>
+                </div>
+
+                {/* CEO */}
+                <div className="text-center">
+                  <div className="mb-4">
+                    <img 
+                      src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&q=80&w=400&h=400" 
+                      alt="Mr. Arjun Mehta - CEO" 
+                      className="w-32 h-32 md:w-40 md:h-40 rounded-lg mx-auto object-cover shadow-md"
+                    />
+                  </div>
+                  <h3 className="text-lg md:text-xl font-bold mb-2 text-guiitar-primary">Mr. Arjun Mehta</h3>
+                  <p className="text-sm text-gray-600 mb-3">CEO, GUIITAR COUNCIL</p>
+                  <p className="text-sm md:text-base text-gray-700 leading-relaxed">
+                    "Our mission is to transform innovative ideas into successful businesses. We provide not just infrastructure, but a complete ecosystem that supports entrepreneurs from ideation to market success, creating lasting value for society."
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Team Section with Carousel */}
-        <section id="team" className="section-padding bg-white">
+        <section id="team" className="section-padding bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-8 md:mb-12">
               <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4">Our Leadership Team</h2>
@@ -79,7 +137,7 @@ const About = () => {
         </section>
 
         {/* Infrastructure */}
-        <section id="infrastructure" className="section-padding bg-gray-50">
+        <section id="infrastructure" className="section-padding bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-8 md:mb-12">
               <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4">Our Infrastructure</h2>
