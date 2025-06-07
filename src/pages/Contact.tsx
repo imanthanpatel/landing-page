@@ -50,17 +50,17 @@ const Contact = () => {
     {
       icon: <MapPin className="h-6 w-6 text-guiitar-primary" />,
       title: "Our Location",
-      details: "GSFC University Campus, Vigyan Bhavan, P.O. Fertilizer Nagar, Vadodara - 391750, Gujarat, India"
+      details: " Event Room, Second Floor,Anviksha - GSFC University,Vadodara, Gujarat - 391750,India  "
     },
     {
       icon: <Phone className="h-6 w-6 text-guiitar-primary" />,
       title: "Phone Number",
-      details: "+91 98989 89898"
+      details: "+91 93132 62712"
     },
     {
       icon: <Mail className="h-6 w-6 text-guiitar-primary" />,
       title: "Email Address",
-      details: "info@guiitarcouncil.org"
+      details: " guiitar@gsfcuniversity.ac.in"
     },
     {
       icon: <Clock className="h-6 w-6 text-guiitar-primary" />,
@@ -70,7 +70,7 @@ const Contact = () => {
   ];
 
   return (
-    <div className="pt-20 flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow">
         {/* Contact Header */}
@@ -199,7 +199,7 @@ const Contact = () => {
                 <div className="h-96 bg-gray-200 rounded-lg overflow-hidden">
                   {/* Google Maps iframe - Replace with actual Google Maps embed code */}
                   <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.6776117574016!2d73.1831092!3d22.2967522!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc58196db4677%3A0xc176e9126d12894b!2sGSFC%20University!5e0!3m2!1sen!2sin!4v1651013378688!5m2!1sen!2sin"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.150005809106!2d73.14239577507192!3d22.38570177962528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395fc97b15555555%3A0x86e6773a36e1a153!2sGSFC%20University!5e0!3m2!1sen!2sin!4v1749287900227!5m2!1sen!2sin"
                     width="100%"
                     height="100%"
                     style={{ border: 0 }}

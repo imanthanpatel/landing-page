@@ -2,10 +2,77 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import TeamCarousel from "@/components/about/TeamCarousel";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+
+// Image URLs from Infrastructure.tsx
+const coWorkingSpace = "https://res.cloudinary.com/dopcjxehj/image/upload/v1743066520/coworking_space_ntgoh3.jpg";
+const designLab = "https://res.cloudinary.com/dopcjxehj/image/upload/v1743066520/design_lab_kj2aaa.jpg";
+const droneLab_GUIITAR = "https://res.cloudinary.com/dopcjxehj/image/upload/v1743066520/drone_lab_mkxvo9.jpg";
+const giitarlab = "https://res.cloudinary.com/dopcjxehj/image/upload/v1743066520/guiitar_lab_lh8t0a.jpg";
+const library = "https://res.cloudinary.com/dopcjxehj/image/upload/v1743066520/library_pt4z2o.jpg";
+const printingLab = "https://res.cloudinary.com/dopcjxehj/image/upload/v1743066525/printing_lab_wrw93w.png";
+const supercomputer_lab = "https://res.cloudinary.com/dopcjxehj/image/upload/v1743066520/supercomputer_lab_t0kplg.jpg";
+const surjan = "https://res.cloudinary.com/dopcjxehj/image/upload/v1743066521/surjan_ground_wds1sg.jpg";
+const tinkeringLab = "https://res.cloudinary.com/dopcjxehj/image/upload/v1743066521/tinkering_lab_xabcx4.jpg";
 
 const About = () => {
+  // Data for infrastructure section, matching Infrastructure.tsx
+  const infrastructureData = [
+    {
+      title: "Co Working Space",
+      image: coWorkingSpace,
+      text: "In today's dynamic world, our co-working space is the ultimate solution for those seeking a flexible, collaborative environment. Tailored for students and startups, it offers a quiet and comfortable setting that enhances creativity and productivity.",
+    },
+    {
+      title: "IoT Lab",
+      image: designLab,
+      text: "A Design Lab serves as a platform for young students and academic researchers to transform their creative and innovative ideas into tangible forms, facilitating the development of ideas into deliverable projects on a lab scale or as pilot projects. It is particularly beneficial in Science, Engineering, and Technology fields, acting as a catalyst for generating intellectual properties such as patents and industrial designs.",
+    },
+    {
+      title: "Advanced Drone Lab",
+      image: droneLab_GUIITAR,
+      text: "Signifying a major leap in utilizing drone technology, merging research with interdisciplinary education to lead academic innovation in the drone sector, the initiative promises to enhance student skills and foster innovation, driving societal and economic advancements.",
+    },
+    {
+      title: "Makers Lab",
+      image: giitarlab,
+      text: "GUIITAR labs are available for idea generation, brain storming in groups, presentations and other admin activities of GUIITAR team. The ambiance of the space is quite suitable for incubators by bringing feel of entrepreneurial spirit all around.",
+    },
+    {
+      title: "Library",
+      image: library,
+      text: "Books on Entrepreneurship, Start-ups, Innovation, IPR, and related subjects are available and accessible until 11:00 PM for study and learning purposes.",
+    },
+    {
+      title: "3D Printing Lab",
+      image: printingLab,
+      text: "A spacious area is available for prototype development, testing, and demonstration, equipped with facilities such as a Laser Cutting Machine, 3D Printer, Vinyl Cutting Machine, and essential tools for Proof of Concept (PoC) or prototype development.",
+    },
+    {
+      title: "Super Computer Lab",
+      image: supercomputer_lab,
+      text: "The Super Computer (Param Shavak DL GPU System) facility is available to accelerate the pace of training and development in advanced Artificial Intelligence fields, including Machine Learning and Deep Learning.",
+    },
+    {
+      title: "Sarjan Ground",
+      image: surjan,
+      text: "'Sarjan' is an outdoor campus space designed for collaboration, offering a setting for discussions, meetings, and creative idea generation. It aims to foster innovation and entrepreneurship, extending learning beyond traditional classrooms.",
+    },
+    {
+      title: "Tinkering Lab",
+      image: tinkeringLab,
+      text: "Large space is available for prototype development, testing and demonstration. The space will be having facilities like basic tools for modification and minor fixes.",
+    },
+  ];
+
   return (
-    <div className="pt-20 flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow">
         {/* About Header */}
@@ -63,67 +130,8 @@ const About = () => {
           </div>
         </section>
 
-        {/* Leadership Messages */}
-        <section id="leadership-messages" className="section-padding bg-white">
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              <h2 className="text-2xl md:text-3xl font-bold mb-8 md:mb-12 text-center">Messages from Leadership</h2>
-              
-              <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
-                {/* President */}
-                <div className="text-center">
-                  <div className="mb-4">
-                    <img 
-                      src="https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&q=80&w=400&h=400" 
-                      alt="Dr. Rajesh Patel - President" 
-                      className="w-32 h-32 md:w-40 md:h-40 rounded-lg mx-auto object-cover shadow-md"
-                    />
-                  </div>
-                  <h3 className="text-lg md:text-xl font-bold mb-2 text-guiitar-primary">Dr. Rajesh Patel</h3>
-                  <p className="text-sm text-gray-600 mb-3">President, GUIITAR COUNCIL</p>
-                  <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-                    "Innovation is not just about creating new technologies; it's about solving real-world problems and making a meaningful impact on society. At GUIITAR COUNCIL, we nurture dreams and build bridges between academia and industry."
-                  </p>
-                </div>
-
-                {/* Provost */}
-                <div className="text-center">
-                  <div className="mb-4">
-                    <img 
-                      src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=400&h=400" 
-                      alt="Dr. Priya Sharma - Provost" 
-                      className="w-32 h-32 md:w-40 md:h-40 rounded-lg mx-auto object-cover shadow-md"
-                    />
-                  </div>
-                  <h3 className="text-lg md:text-xl font-bold mb-2 text-guiitar-primary">Dr. Priya Sharma</h3>
-                  <p className="text-sm text-gray-600 mb-3">Provost, GUIITAR COUNCIL</p>
-                  <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-                    "Education and innovation go hand in hand. Our role is to create an environment where knowledge transforms into action. We believe in experiential learning where students learn by doing, failing, and succeeding."
-                  </p>
-                </div>
-
-                {/* CEO */}
-                <div className="text-center">
-                  <div className="mb-4">
-                    <img 
-                      src="https://images.unsplash.com/photo-1581092795360-fd1ca04f0952?auto=format&fit=crop&q=80&w=400&h=400" 
-                      alt="Mr. Arjun Mehta - CEO" 
-                      className="w-32 h-32 md:w-40 md:h-40 rounded-lg mx-auto object-cover shadow-md"
-                    />
-                  </div>
-                  <h3 className="text-lg md:text-xl font-bold mb-2 text-guiitar-primary">Mr. Arjun Mehta</h3>
-                  <p className="text-sm text-gray-600 mb-3">CEO, GUIITAR COUNCIL</p>
-                  <p className="text-sm md:text-base text-gray-700 leading-relaxed">
-                    "Our mission is to transform innovative ideas into successful businesses. We provide not just infrastructure, but a complete ecosystem that supports entrepreneurs from ideation to market success, creating lasting value for society."
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* Team Section with Carousel */}
-        <section id="team" className="section-padding bg-gray-50">
+        <section id="team" className="section-padding bg-white">
           <div className="container mx-auto px-4">
             <div className="text-center mb-8 md:mb-12">
               <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4">Our Leadership Team</h2>
@@ -137,7 +145,7 @@ const About = () => {
         </section>
 
         {/* Infrastructure */}
-        <section id="infrastructure" className="section-padding bg-white">
+        <section id="infrastructure" className="section-padding bg-gray-50">
           <div className="container mx-auto px-4">
             <div className="text-center mb-8 md:mb-12">
               <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4">Our Infrastructure</h2>
@@ -146,60 +154,47 @@ const About = () => {
               </p>
             </div>
             
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-              <div>
-                <img 
-                  src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=1000" 
-                  alt="Co-working Space" 
-                  className="rounded-lg shadow-md w-full h-48 sm:h-56 md:h-64 object-cover mb-4"
-                />
-                <h3 className="text-lg md:text-xl font-semibold mb-2">Co-working Space</h3>
-                <p className="text-gray-600 text-sm md:text-base">
-                  Modern, well-equipped co-working areas designed to foster collaboration and productivity.
-                </p>
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              className="w-full"
+            >
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {infrastructureData.map((facility, index) => (
+                  <CarouselItem
+                    key={index}
+                    className="pl-2 md:pl-4 sm:basis-full md:basis-1/2 lg:basis-1/3"
+                  >
+                    <div className="card border-2 border-primary rounded-[10px] w-full h-full bg-white flex flex-col items-center justify-between p-5 shadow-[0_6px_12px_rgba(0,0,0,0.1)] transition-all duration-300 ease-in hover:-translate-y-[5px] hover:shadow-[0_8px_16px_rgba(0,0,0,0.2)] max-[768px]:p-4 max-[480px]:p-3">
+                      <div className="card-title text-primary text-[1.5rem] font-semibold mb-2 text-center max-[1024px]:text-[1.25rem] max-[768px]:text-[1rem] max-[480px]:text-[0.875rem]">
+                        {facility.title}
+                      </div>
+                      <div className="card-image w-full h-40 sm:h-48 md:h-56 overflow-hidden rounded-[5px]">
+                        <img
+                          src={facility.image}
+                          alt={facility.title}
+                          className="w-full h-full object-cover max-h-40 sm:max-h-48 md:max-h-56 transition-transform duration-300 ease-in hover:scale-105"
+                        />
+                      </div>
+                      <div className="card-text mt-4 mb-2 text-gray-600 text-[0.875rem] text-center max-[1024px]:text-[0.85rem] max-[768px]:text-[0.8rem] max-[480px]:text-[0.75rem] line-clamp-4">
+                        {facility.text}
+                      </div>
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <div className="flex justify-center mt-8 space-x-4">
+                <CarouselPrevious className="relative static transform-none" />
+                <CarouselNext className="relative static transform-none" />
               </div>
-              
-              <div>
-                <img 
-                  src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&q=80&w=1000" 
-                  alt="Prototyping Lab" 
-                  className="rounded-lg shadow-md w-full h-48 sm:h-56 md:h-64 object-cover mb-4"
-                />
-                <h3 className="text-lg md:text-xl font-semibold mb-2">Prototyping Lab</h3>
-                <p className="text-gray-600 text-sm md:text-base">
-                  Advanced prototyping facilities with 3D printers, laser cutters, and other tools for product development.
-                </p>
-              </div>
-              
-              <div>
-                <img 
-                  src="https://images.unsplash.com/photo-1527977966376-1c8408f9f108?auto=format&fit=crop&q=80&w=1000" 
-                  alt="Drone Technology Lab" 
-                  className="rounded-lg shadow-md w-full h-48 sm:h-56 md:h-64 object-cover mb-4"
-                />
-                <h3 className="text-lg md:text-xl font-semibold mb-2">Drone Technology Lab</h3>
-                <p className="text-gray-600 text-sm md:text-base">
-                  Specialized facility for drone development, testing, and research applications.
-                </p>
-              </div>
-              
-              <div>
-                <img 
-                  src="https://images.unsplash.com/photo-1505373877841-8d25f7d46678?auto=format&fit=crop&q=80&w=1000" 
-                  alt="Meeting Rooms" 
-                  className="rounded-lg shadow-md w-full h-48 sm:h-56 md:h-64 object-cover mb-4"
-                />
-                <h3 className="text-lg md:text-xl font-semibold mb-2">Conference & Meeting Facilities</h3>
-                <p className="text-gray-600 text-sm md:text-base">
-                  Well-appointed meeting rooms and conference spaces for team collaborations and client presentations.
-                </p>
-              </div>
-            </div>
+            </Carousel>
             
             <div className="text-center mt-8 md:mt-12">
-              <Button size="lg" className="bg-guiitar-primary hover:bg-guiitar-primary/90 text-white">
+              {/* <Button size="lg" className="bg-guiitar-primary hover:bg-guiitar-primary/90 text-white">
                 Schedule a Visit
-              </Button>
+              </Button> */}
             </div>
           </div>
         </section>

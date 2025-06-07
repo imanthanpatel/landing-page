@@ -7,12 +7,12 @@ const Programs = () => {
   const fundingPrograms = [
     {
       title: "SSIP Grant",
-      description: "Student Startup and Innovation Policy grants to support student-led innovations up to ₹2 lakhs.",
+      description: "Student Startup and Innovation Policy grants to support student-led innovations up to ₹2.5 lakhs.",
       color: "bg-guiitar-primary/10 border-l-4 border-guiitar-primary"
     },
     {
       title: "Nodal Grant",
-      description: "Funding for established startups looking to scale their operations and impact up to ₹10 lakhs.",
+      description: "Funding for established startups looking to scale their operations and impact up to ₹30 lakhs.",
       color: "bg-guiitar-secondary/10 border-l-4 border-guiitar-secondary"
     },
     {

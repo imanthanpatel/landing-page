@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/layout/Navbar";
@@ -81,7 +80,7 @@ const Events = () => {
       title: "Blockchain Technology Workshop",
       date: "December 18, 2024",
       location: "Tech Lab, GSFC University",
-      image: "https://images.unsplash.com/photo-1639322537231-2f206e06af84?auto=format&fit=crop&q=80&w=1000",
+      image: "https://images.unsplash.com/photo-1639322531621-2f2061e26e3a?auto=format&fit=crop&q=80&w=1000",
       category: "Workshop",
       description: "An introduction to blockchain technology, covering its principles, applications, and potential impact on various industries through practical demonstrations."
     },
@@ -129,15 +128,15 @@ const Events = () => {
   ];
 
   return (
-    <div className="pt-20 flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow">
         {/* Events Header */}
-        <section className="bg-guiitar-primary text-white py-16 md:py-24">
+        <section className="bg-guiitar-primary text-white py-6 md:py-12">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-5xl font-bold mb-6">Workshops & Events</h1>
-              <p className="text-lg md:text-xl opacity-90">
+              <h1 className="text-3xl md:text-4xl font-bold mb-4">Workshops & Events</h1>
+              <p className="text-base md:text-lg opacity-90">
                 Enhance your skills, expand your network, and stay updated with the latest trends through our specialized workshops and networking events.
               </p>
             </div>
@@ -145,31 +144,29 @@ const Events = () => {
         </section>
 
         {/* Events List */}
-        <section className="section-padding bg-white">
+        <section id="events" className="section-padding bg-gray-100">
           <div className="container mx-auto px-4">
-            <Tabs defaultValue="upcoming" className="max-w-5xl mx-auto">
-              <TabsList className="grid w-full grid-cols-2 mb-8">
-                <TabsTrigger 
-                  value="upcoming" 
-                  className="text-base py-3"
-                  onClick={() => setActiveTab("upcoming")}
+            <Tabs defaultValue="upcoming" value={activeTab} onValueChange={setActiveTab} className="max-w-5xl mx-auto">
+              <TabsList className="flex justify-center w-full mb-6 rounded-lg bg-gray-200 p-1">
+                <TabsTrigger
+                  value="upcoming"
+                  className="flex-1 text-center text-sm md:text-base font-medium py-2 px-4 rounded-lg transition-all duration-200 data-[state=active]:bg-white data-[state=active]:text-guiitar-primary data-[state=active]:shadow-sm hover:bg-gray-300"
                 >
                   Upcoming Events
                 </TabsTrigger>
-                <TabsTrigger 
-                  value="past" 
-                  className="text-base py-3"
-                  onClick={() => setActiveTab("past")}
+                <TabsTrigger
+                  value="past"
+                  className="flex-1 text-center text-sm md:text-base font-medium py-2 px-4 rounded-lg transition-all duration-200 data-[state=active]:bg-white data-[state=active]:text-guiitar-primary data-[state=active]:shadow-sm hover:bg-gray-300"
                 >
                   Past Events
                 </TabsTrigger>
               </TabsList>
               
               <TabsContent value="upcoming" className="mt-0">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
                   {upcomingEvents.map((event) => (
                     <Card key={event.id} className="overflow-hidden border-gray-100 transition-all duration-300 hover:shadow-lg">
-                      <div className="relative h-60 overflow-hidden">
+                      <div className="relative h-48 md:h-60 overflow-hidden">
                         <img 
                           src={event.image} 
                           alt={event.title} 
@@ -179,30 +176,30 @@ const Events = () => {
                           {event.category}
                         </Badge>
                       </div>
-                      <CardContent className="p-6">
-                        <h3 className="text-xl font-semibold mb-3">{event.title}</h3>
-                        <p className="text-gray-600 mb-4 line-clamp-2">{event.description}</p>
+                      <CardContent className="p-4 md:p-6">
+                        <h3 className="text-lg md:text-xl font-semibold mb-2 md:mb-3">{event.title}</h3>
+                        <p className="text-gray-600 mb-4 line-clamp-2 text-sm md:text-base">{event.description}</p>
                         
-                        <div className="space-y-2 mb-5">
-                          <div className="flex items-center text-gray-600">
+                        <div className="space-y-2 mb-4 md:mb-5">
+                          <div className="flex items-center text-gray-600 text-sm md:text-base">
                             <CalendarDays size={16} className="mr-2" />
                             <span>{event.date}</span>
                           </div>
-                          <div className="flex items-center text-gray-600">
+                          <div className="flex items-center text-gray-600 text-sm md:text-base">
                             <Clock size={16} className="mr-2" />
                             <span>{event.time}</span>
                           </div>
-                          <div className="flex items-center text-gray-600">
+                          <div className="flex items-center text-gray-600 text-sm md:text-base">
                             <MapPin size={16} className="mr-2" />
                             <span>{event.location}</span>
                           </div>
-                          <div className="flex items-center text-gray-600">
+                          <div className="flex items-center text-gray-600 text-sm md:text-base">
                             <Users size={16} className="mr-2" />
                             <span>{event.seats} seats available</span>
                           </div>
                         </div>
                         
-                        <Button className="w-full bg-guiitar-primary hover:bg-guiitar-primary/90 text-white">
+                        <Button className="w-full bg-guiitar-primary hover:bg-guiitar-primary/90 text-white text-sm md:text-base">
                           Register Now
                         </Button>
                       </CardContent>
@@ -212,35 +209,35 @@ const Events = () => {
               </TabsContent>
               
               <TabsContent value="past" className="mt-0">
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
                   {pastEvents.map((event) => (
                     <Card key={event.id} className="overflow-hidden border-gray-100 transition-all duration-300 hover:shadow-md">
-                      <div className="relative h-48 overflow-hidden">
+                      <div className="relative h-40 md:h-48 overflow-hidden">
                         <img 
                           src={event.image} 
                           alt={event.title} 
                           className="w-full h-full object-cover"
                         />
                         <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40 flex items-center justify-center">
-                          <span className="text-white font-bold text-lg px-4 py-1 border-2 border-white rounded-full">Completed</span>
+                          <span className="text-white font-bold text-sm md:text-lg px-3 py-1 border-2 border-white rounded-full">Completed</span>
                         </div>
                       </div>
-                      <CardContent className="p-4">
-                        <Badge variant="outline" className="mb-2 bg-gray-50 border-guiitar-accent text-guiitar-accent">
+                      <CardContent className="p-3 md:p-4">
+                        <Badge variant="outline" className="mb-2 bg-gray-50 border-guiitar-accent text-guiitar-accent text-xs md:text-sm">
                           {event.category}
                         </Badge>
-                        <h3 className="text-lg font-semibold mb-3">{event.title}</h3>
-                        <div className="space-y-2 mb-3">
-                          <div className="flex items-center text-gray-600 text-sm">
+                        <h3 className="text-base md:text-lg font-semibold mb-2 md:mb-3">{event.title}</h3>
+                        <div className="space-y-1 md:space-y-2 mb-2 md:mb-3">
+                          <div className="flex items-center text-gray-600 text-xs md:text-sm">
                             <CalendarDays size={14} className="mr-1.5" />
                             <span>{event.date}</span>
                           </div>
-                          <div className="flex items-center text-gray-600 text-sm">
+                          <div className="flex items-center text-gray-600 text-xs md:text-sm">
                             <MapPin size={14} className="mr-1.5" />
                             <span>{event.location}</span>
                           </div>
                         </div>
-                        <Button variant="outline" size="sm" className="w-full border-guiitar-primary text-guiitar-primary hover:bg-guiitar-primary/10">
+                        <Button variant="outline" size="sm" className="w-full border-guiitar-primary text-guiitar-primary hover:bg-guiitar-primary/10 text-xs md:text-sm">
                           View Details
                         </Button>
                       </CardContent>
@@ -255,34 +252,34 @@ const Events = () => {
         {/* Featured Workshops */}
         <section className="section-padding bg-gray-50">
           <div className="container mx-auto px-4">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Featured Workshops</h2>
-              <p className="text-gray-600 max-w-2xl mx-auto">
+            <div className="text-center mb-8 md:mb-12">
+              <h2 className="text-2xl md:text-3xl font-bold mb-3 md:mb-4">Featured Workshops</h2>
+              <p className="text-gray-600 max-w-2xl mx-auto text-sm md:text-base">
                 Explore our specialized workshops designed to provide hands-on experience with cutting-edge technologies.
               </p>
             </div>
             
-            <div className="space-y-16 max-w-5xl mx-auto">
+            <div className="space-y-12 md:space-y-16 max-w-5xl mx-auto">
               {workshopDetails.map((workshop, index) => (
                 <div key={index} className="bg-white rounded-lg shadow-sm overflow-hidden">
                   <div className="grid grid-cols-1 lg:grid-cols-3">
-                    <div className="lg:col-span-1 h-full">
+                    <div className="lg:col-span-1 h-48 lg:h-full">
                       <img 
                         src={workshop.image} 
                         alt={workshop.title} 
                         className="w-full h-full object-cover"
                       />
                     </div>
-                    <div className="lg:col-span-2 p-6 lg:p-8">
-                      <h3 className="text-2xl font-semibold mb-4">{workshop.title}</h3>
-                      <p className="text-gray-600 mb-6">{workshop.description}</p>
+                    <div className="lg:col-span-2 p-4 md:p-6 lg:p-8">
+                      <h3 className="text-xl md:text-2xl font-semibold mb-3 md:mb-4">{workshop.title}</h3>
+                      <p className="text-gray-600 mb-4 md:mb-6 text-sm md:text-base">{workshop.description}</p>
                       
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-4 md:mb-6">
                         <div>
-                          <h4 className="text-lg font-semibold mb-3 text-guiitar-primary">Workshop Topics</h4>
-                          <ul className="space-y-2">
+                          <h4 className="text-base md:text-lg font-semibold mb-2 md:mb-3 text-guiitar-primary">Workshop Topics</h4>
+                          <ul className="space-y-1 md:space-y-2">
                             {workshop.topics.map((topic, i) => (
-                              <li key={i} className="flex items-start">
+                              <li key={i} className="flex items-start text-sm md:text-base">
                                 <span className="text-guiitar-accent mr-2">•</span>
                                 <span className="text-gray-700">{topic}</span>
                               </li>
@@ -290,10 +287,10 @@ const Events = () => {
                           </ul>
                         </div>
                         <div>
-                          <h4 className="text-lg font-semibold mb-3 text-guiitar-primary">Learning Outcomes</h4>
-                          <ul className="space-y-2">
+                          <h4 className="text-base md:text-lg font-semibold mb-2 md:mb-3 text-guiitar-primary">Learning Outcomes</h4>
+                          <ul className="space-y-1 md:space-y-2">
                             {workshop.outcomes.map((outcome, i) => (
-                              <li key={i} className="flex items-start">
+                              <li key={i} className="flex items-start text-sm md:text-base">
                                 <span className="text-guiitar-accent mr-2">•</span>
                                 <span className="text-gray-700">{outcome}</span>
                               </li>
@@ -302,7 +299,7 @@ const Events = () => {
                         </div>
                       </div>
                       
-                      <Button className="bg-guiitar-primary hover:bg-guiitar-primary/90 text-white">
+                      <Button className="bg-guiitar-primary hover:bg-guiitar-primary/90 text-white text-sm md:text-base">
                         Learn More & Register
                       </Button>
                     </div>

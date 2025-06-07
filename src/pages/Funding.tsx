@@ -1,4 +1,3 @@
-
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
@@ -12,7 +11,7 @@ const Funding = () => {
     {
       title: "SSIP Grant",
       description: "Student Startup and Innovation Policy grants for student entrepreneurs.",
-      amount: "Up to ₹2 Lakhs",
+      amount: "Up to ₹2.5 Lakhs",
       color: "border-guiitar-primary",
       eligibility: [
         "Current students or recent graduates (within 3 years)",
@@ -31,7 +30,7 @@ const Funding = () => {
     {
       title: "Nodal Grant",
       description: "Funding support for established startups looking to scale their operations.",
-      amount: "Up to ₹10 Lakhs",
+      amount: "Up to ₹30 Lakhs",
       color: "border-guiitar-secondary",
       eligibility: [
         "Registered startup with operational history of at least 1 year",
@@ -69,7 +68,7 @@ const Funding = () => {
   ];
 
   return (
-    <div className="pt-20 flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen">
       <Navbar />
       <main className="flex-grow">
         {/* Funding Header */}
